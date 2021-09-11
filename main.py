@@ -41,3 +41,5 @@ def wage_calculate():
 
 total_wage = wage_calculate()
 print("Employee total wage is ", total_wage)
+
+
