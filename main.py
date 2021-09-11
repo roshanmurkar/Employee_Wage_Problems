@@ -19,8 +19,9 @@ def calculateEmployeeWage():
         }
     workingDays = 0
     totalWorkingHours = 0
-    check_emp = random.randint(0, 2)
+
     while(workingDays < TOTAL_WORKING_DAYS and totalWorkingHours < TOTAL_WORKING_HOURS):
+        check_emp = random.randint(0, 2)
         totalWorkingHours = totalWorkingHours + emp_attendence.get(check_emp)
         workingDays = workingDays + 1
 
