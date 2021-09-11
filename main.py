@@ -9,17 +9,13 @@ PART_TIME_HOURS = 4
 TOTAL_WORKING_DAYS = 20
 TOTAL_WORKING_HOURS = 100
 
-
-def wage_calculate():
-    emp_attendence = {
-        IS_PRESENT_FULL_DAY: FULL_DAY_HOURS,
-        IS_PRESENT_PART_TIME: PART_TIME_HOURS,
-        IS_ABSENT: 0
-    }
-
-    if __name__ == "__main__":
-        main()
-
+class Employee:
+    def wage_calculate(self):
+        emp_attendence = {
+            IS_PRESENT_FULL_DAY: FULL_DAY_HOURS,
+            IS_PRESENT_PART_TIME: PART_TIME_HOURS,
+            IS_ABSENT: 0
+        }
         counter = 0
         working_days = 0
         total_working_hours = 0
@@ -27,7 +23,7 @@ def wage_calculate():
         while working_days < TOTAL_WORKING_DAYS and total_working_hours < TOTAL_WORKING_HOURS:
             try:
                 user_input = int(input("Enter the number for  attendance \n0-For Absent \n1- For Is Present Full Day "
-                                       "\n2- For Is Present Part Time \n"))
+                                           "\n2- For Is Present Part Time \n"))
                 total_working_hours = total_working_hours + emp_attendence.get(user_input)
                 working_days = working_days + 1
                 counter = counter + 1
@@ -39,7 +35,11 @@ def wage_calculate():
                 print("program is run successfully")
         return WAGE_PER_HOUR * total_working_hours
 
-total_wage = wage_calculate()
+emp = Employee()
+
+if __name__ == "__main__":
+    main()
+total_wage = emp.wage_calculate()
 print("Employee total wage is ", total_wage)
 
 
